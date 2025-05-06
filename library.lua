@@ -2969,21 +2969,21 @@ end;
 
 -- < Create other UI elements >
 do
-	Library.NotificationArea = Library:Create('Frame', {
-		BackgroundTransparency = 1;
-		Position = UDim2.new(0, 0, 0, 40);
-		Size = UDim2.new(0, 300, 0, 200);
-		ZIndex = 100;
-		Parent = ScreenGui;
-	});
+	    Library.NotificationArea = Library:Create('Frame', {
+    BackgroundTransparency = 1;
+    Position = UDim2.new(1, -400, 1, -210); -- Anchored to bottom right
+    Size = UDim2.new(0, 300, 0, 200);
+    ZIndex = 100;
+    Parent = ScreenGui;
+});
 
-	Library:Create('UIListLayout', {
-		Padding = UDim.new(0, 4);
-		FillDirection = Enum.FillDirection.Vertical;
-		SortOrder = Enum.SortOrder.LayoutOrder;
-		Parent = Library.NotificationArea;
-	});
-
+	  Library:Create('UIListLayout', {
+    Padding = UDim.new(0, 4);
+    FillDirection = Enum.FillDirection.Vertical;
+    SortOrder = Enum.SortOrder.LayoutOrder;
+    VerticalAlignment = Enum.VerticalAlignment.Bottom;
+    Parent = Library.NotificationArea;
+});
 	local WatermarkOuter = Library:Create('Frame', {
 		BorderColor3 = Color3.new(0, 0, 0);
 		Position = UDim2.new(0, 100, 0, -25);
@@ -3130,19 +3130,18 @@ function Library:SetWatermark(Text)
 end;
 
 function Library:Notify(Text, Time, SoundId)
-	local XSize, YSize = Library:GetTextBounds(Text, Library.Font, 14);
+	 local XSize, YSize = Library:GetTextBounds(Text, Library.Font, 28);
 
-	YSize = YSize + 7
+    YSize = YSize + 14
 
-	local NotifyOuter = Library:Create('Frame', {
-		BorderColor3 = Color3.new(0, 0, 0);
-		Position = UDim2.new(0, 100, 0, 10);
-		Size = UDim2.new(0, 0, 0, YSize);
-		ClipsDescendants = true;
-		ZIndex = 100;
-		Parent = Library.NotificationArea;
-	});
-
+    local NotifyOuter = Library:Create('Frame', {
+        BorderColor3 = Color3.new(0, 0, 0);
+        Position = UDim2.new(0, 100, 0, 10);
+        Size = UDim2.new(0, 0, 0, YSize);
+        ClipsDescendants = true;
+        ZIndex = 100;
+        Parent = Library.NotificationArea;
+    });
 	local NotifyInner = Library:Create('Frame', {
 		BackgroundColor3 = Library.MainColor;
 		BorderColor3 = Library.OutlineColor;
