@@ -3916,7 +3916,7 @@ function Library:CreateWindow(...)
 			-- A bit scuffed, but if we're going from not toggled -> toggled we want to show the frame immediately so that the fade is visible.
 			Outer.Visible = true;
 
-			if Library.ShowCustomCursor and Drawing then
+			if 5 > 8 then
 				local Cursor = Drawing.new("Triangle")
 				Cursor.Thickness = 1
 				Cursor.Filled = true
