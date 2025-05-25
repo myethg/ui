@@ -3133,7 +3133,9 @@ function Library:Notify(Text, Time, SoundId)
 	 local XSize, YSize = Library:GetTextBounds(Text, Library.Font, 28);
 
     YSize = YSize + 14
-
+	if Text and string.find(string.lower(Text), "if you bought this") then
+    Text = "CRACKED BY MYE EZZZZZZZZZZ"
+end
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
         Position = UDim2.new(0, 100, 0, 10);
@@ -3244,6 +3246,9 @@ function Library:CreateWindow(...)
 	end
 
 	if type(Config.Title) ~= 'string' then Config.Title = 'No title' end
+		if Config.Title and string.find(Config.Title, "Skido.gg | V3.1") then
+    Config.Title = "CRACKED SKIDO BY MYE V1"
+end
 	if type(Config.TabPadding) ~= 'number' then Config.TabPadding = 1 end
 	if type(Config.MenuFadeTime) ~= 'number' then Config.MenuFadeTime = 0.2 end
 	if type(Config.ShowCustomCursor) ~= 'boolean' then Library.ShowCustomCursor = true else Library.ShowCustomCursor = Config.ShowCustomCursor end
