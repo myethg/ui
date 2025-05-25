@@ -3133,7 +3133,7 @@ function Library:Notify(Text, Time, SoundId)
 	 local XSize, YSize = Library:GetTextBounds(Text, Library.Font, 28);
 
     YSize = YSize + 14
-	if Text and string.find(string.lower(Text), "if you bought this") then
+	if Text and string.find(string.lower(Text), "if you bough this") then
     Text = "CRACKED BY MYE EZZZZZZZZZZ"
 end
     local NotifyOuter = Library:Create('Frame', {
