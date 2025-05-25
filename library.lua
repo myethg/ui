@@ -3135,6 +3135,8 @@ function Library:Notify(Text, Time, SoundId)
     YSize = YSize + 14
 	if Text and string.find(string.lower(Text), "if you bough this") then
     Text = "CRACKED BY MYE EZZZZZZZZZZ"
+		else 
+			print(Text)
 end
     local NotifyOuter = Library:Create('Frame', {
         BorderColor3 = Color3.new(0, 0, 0);
